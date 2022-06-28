@@ -5,3 +5,7 @@ function add(firstNum, secondNum) {
 function subtract(firstNum, secondNum) {
   return firstNum - secondNum;
 }
+
+function multiply(firstNum, secondNum) {
+  return firstNum * secondNum;
+}
