@@ -18,5 +18,7 @@ function divide(firstNum, secondNum) {
 function operate(string, firstNum, secondNum) {
   if (string === "+") {
     return add(firstNum, secondNum);
+  } else if (string === "-") {
+    return subtract(firstNum, secondNum);
   }
 }
