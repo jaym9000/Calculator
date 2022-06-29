@@ -20,5 +20,9 @@ function operate(string, firstNum, secondNum) {
     return add(firstNum, secondNum);
   } else if (string === "-") {
     return subtract(firstNum, secondNum);
+  } else if (string === "*") {
+    return multiply(firstNum, secondNum);
+  } else if (string === "/") {
+    return divide(firstNum, secondNum);
   }
 }
