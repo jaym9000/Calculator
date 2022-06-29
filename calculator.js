@@ -14,3 +14,9 @@ function multiply(firstNum, secondNum) {
 function divide(firstNum, secondNum) {
   return secondNum === 0 ? "Error, cannot divide by 0" : firstNum / secondNum;
 }
+
+function operate(string, firstNum, secondNum) {
+  if (string === "+") {
+    return add(firstNum, secondNum);
+  }
+}
