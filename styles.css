@@ -19,4 +19,16 @@ html {
 }
 
 .ac {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make buttons round */
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
 }
