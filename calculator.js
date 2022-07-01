@@ -1,3 +1,6 @@
+// DOM declaration section
+const buttonValue = document.getElementsByClassName("btn");
+
 // This function adds 2 numbers
 function add(firstNum, secondNum) {
   return firstNum + secondNum;
@@ -33,11 +36,22 @@ function operate(string, firstNum, secondNum) {
 
 // This function populates the display when buttons are pressed
 const displayNum = function pupulateDisplay() {
-  let getNum;
+  let btnVal = buttonValue.map((a) => a);
   let value = [];
-  for (let i = 0; i < value.length; i++) {
-    value[i] = getNum;
+
+  //   for (let i = 0; i < buttonValue.length; i++) {
+  //     btnVal[i].addEventListener("click", function () {
+  //       value[i] = btnVal[i].innerText;
+  //     });
+  //   }
+
+  for (let i = 0; i < btnVal.length; i++) {
+    btnVal[i].id = i;
+    btnVal[i].addEventListener("click", function () {
+      value[i] = this.innerText;
+    });
   }
+
   let valueToCalculate = parseInt(value.join(""), 10);
   return valueToCalculate;
 };
