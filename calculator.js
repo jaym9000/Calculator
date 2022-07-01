@@ -30,3 +30,14 @@ function operate(string, firstNum, secondNum) {
     return divide(firstNum, secondNum);
   }
 }
+
+// This function populates the display when buttons are pressed
+const displayNum = function pupulateDisplay() {
+  let getNum;
+  let value = [];
+  for (let i = 0; i < value.length; i++) {
+    value[i] = getNum;
+  }
+  let valueToCalculate = parseInt(value.join(""), 10);
+  return valueToCalculate;
+};
