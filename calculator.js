@@ -1,11 +1,14 @@
+// This function adds 2 numbers
 function add(firstNum, secondNum) {
   return firstNum + secondNum;
 }
 
+// This function subtracts 2 numbers
 function subtract(firstNum, secondNum) {
   return firstNum - secondNum;
 }
 
+// This function multiplies 2 numbers
 function multiply(firstNum, secondNum) {
   return firstNum * secondNum;
 }
@@ -15,6 +18,7 @@ function divide(firstNum, secondNum) {
   return secondNum === 0 ? "Error, cannot divide by 0" : firstNum / secondNum;
 }
 
+// Operate function takes an operator as string and returns the calculated result appropriate to the operator
 function operate(string, firstNum, secondNum) {
   if (string === "+") {
     return add(firstNum, secondNum);
