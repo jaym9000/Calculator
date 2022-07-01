@@ -28,7 +28,7 @@ html {
 }
 
 /* Put spacing between all buttons */
-.row button {
+.column button {
   display: flex;
   margin: 10px;
 }
