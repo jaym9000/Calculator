@@ -1,14 +1,10 @@
+/* Makes entire page flex box */
 html {
   display: flex;
   justify-content: center;
 }
 
-/* .outline {
-  width: 325px;
-  height: 332px;
-  border: 1px solid black;
-} */
-
+/* Makes screen that displays everything pretty */
 .screen {
   box-sizing: border-box;
   width: 270px;
@@ -21,22 +17,20 @@ html {
   padding: 5px;
 }
 
+/* Takes care of all the buttons visuals */
 .values {
   display: flex;
   align-items: flex-end;
   justify-content: center;
-
   width: 280px;
   height: 300px;
   /* border: 1px solid black; */
 }
 
+/* Put spacing between all buttons */
 .row button {
   display: flex;
   margin: 10px;
-}
-
-.ac {
 }
 
 /* Make buttons round */
@@ -49,6 +43,7 @@ button {
   width: 50px;
 }
 
+/* Gives some space between calculator and copyright text */
 .footer {
   margin: 25px;
 }
