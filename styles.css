@@ -3,24 +3,40 @@ html {
   justify-content: center;
 }
 
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 400px;
-  height: 500px;
+/* .outline {
+  width: 325px;
+  height: 332px;
   border: 1px solid black;
+} */
+
+.screen {
+  box-sizing: border-box;
+  width: 270px;
+  height: 50px;
+  margin: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 5px;
+}
+
+.values {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 280px;
+  height: 300px;
+  /* border: 1px solid black; */
 }
 
 .row button {
   display: flex;
-
-  /* vertical-align: middle; */
+  margin: 10px;
 }
 
 .ac {
-  display: flex;
-  flex-direction: column;
 }
 
 /* Make buttons round */
@@ -31,4 +47,8 @@ button {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+}
+
+.footer {
+  margin: 25px;
 }
