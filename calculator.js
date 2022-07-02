@@ -1,5 +1,10 @@
+// Initialize global values
+let value = [];
+let num;
+
 // DOM declaration section
-const buttonValue = document.getElementsByClassName("btn");
+const btn = document.getElementsByTagName("button");
+const visual = document.getElementById("screen");
 
 // This function adds 2 numbers
 function add(firstNum, secondNum) {
@@ -34,24 +39,25 @@ function operate(string, firstNum, secondNum) {
   }
 }
 
+// Function to see if number pressed is a number
+function isNum(btnPressed) {
+  return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].indexOf(btnPressed) > -1;
+}
+
 // This function populates the display when buttons are pressed
 const displayNum = function pupulateDisplay() {
-  let btnVal = buttonValue.map((a) => a);
-  let value = [];
-
-  //   for (let i = 0; i < buttonValue.length; i++) {
-  //     btnVal[i].addEventListener("click", function () {
-  //       value[i] = btnVal[i].innerText;
-  //     });
-  //   }
-
-  for (let i = 0; i < btnVal.length; i++) {
-    btnVal[i].id = i;
-    btnVal[i].addEventListener("click", function () {
-      value[i] = this.innerText;
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", function () {
+      let textFrmBtn = btn[i].innerHTML;
+      if (isNum(Number(textFrmBtn))) {
+        value.push(textFrmBtn);
+        num = Number(value.join(""));
+        visual.textContent = num;
+        console.log(num);
+      } else {
+        return;
+      }
     });
   }
-
-  let valueToCalculate = parseInt(value.join(""), 10);
-  return valueToCalculate;
 };
+displayNum();
