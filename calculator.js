@@ -27,6 +27,7 @@ function divide(firstNum, secondNum) {
 }
 
 // Operate function takes an operator as string and returns the calculated result appropriate to the operator
+// When function pressed, store first value, save operator and use on values when = is pressed.
 function operate(string, firstNum, secondNum) {
   if (string === "+") {
     return add(firstNum, secondNum);
