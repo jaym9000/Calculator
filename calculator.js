@@ -44,16 +44,17 @@ function isNum(btnPressed) {
   return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].indexOf(btnPressed) > -1;
 }
 
-// This function populates the display when buttons are pressed
+// This function populates the display when number buttons are pressed
 const displayNum = function pupulateDisplay() {
   for (let i = 0; i < btn.length; i++) {
+    // when btn is clicked
     btn[i].addEventListener("click", function () {
       let textFrmBtn = btn[i].innerHTML;
+      //   if btn clicked is a number
       if (isNum(Number(textFrmBtn))) {
         value.push(textFrmBtn);
         num = Number(value.join(""));
         visual.textContent = num;
-        console.log(num);
       } else {
         return;
       }
