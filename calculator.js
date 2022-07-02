@@ -52,7 +52,7 @@ const displayNum = function pupulateDisplay() {
     btn[i].addEventListener("click", function () {
       let textFrmBtn = btn[i].innerHTML;
       //   if btn clicked is a number
-      if (isNum(Number(textFrmBtn))) {
+      if (isNum(Number(textFrmBtn)) | (textFrmBtn == ".")) {
         value.push(textFrmBtn);
         num = Number(value.join(""));
         visual.textContent = num;
@@ -63,3 +63,8 @@ const displayNum = function pupulateDisplay() {
   }
 };
 displayNum();
+
+// Store previous value in variable once operator is clicked and empty display
+// const storeAndClear = (event) => {
+//   if(event == "+")
+// };
