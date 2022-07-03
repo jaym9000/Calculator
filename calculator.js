@@ -1,5 +1,5 @@
 // Initialize global values
-let valueFirst = [];
+
 let valueSecond = [];
 let num;
 let firstNum;
@@ -54,14 +54,15 @@ function isNum(btnPressed) {
 
 // This function populates the display when number buttons are pressed and stores the value
 const displayNum = function pupulateDisplay() {
+  let value = [];
   for (let i = 0; i < btn.length; i++) {
     // when btn is clicked
     btn[i].addEventListener("click", function () {
       let textFrmBtn = btn[i].innerHTML;
       //   if btn clicked is a number
       if (isNum(Number(textFrmBtn)) | (textFrmBtn == ".")) {
-        valueFirst.push(textFrmBtn);
-        num = Number(valueFirst.join(""));
+        value.push(textFrmBtn);
+        num = Number(value.join(""));
         visual.textContent = num;
       } else {
         return;
@@ -86,10 +87,10 @@ function clickOperate() {
 displayNum();
 clickOperate();
 
-for (let i = 0; i < btn.length; i++) {
-  btn[i].addEventListener("click", function (event) {
-    if (this.innerHTML == "=") {
-      visual.textContent = operate(operation, firstNum, secondNum);
-    }
-  });
-}
+// for (let i = 0; i < btn.length; i++) {
+//   btn[i].addEventListener("click", function (event) {
+//     if (this.innerHTML == "=") {
+//       visual.textContent = operate(operation, firstNum, secondNum);
+//     }
+//   });
+// }
