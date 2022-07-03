@@ -61,14 +61,15 @@ const displayNum = function pupulateDisplay() {
       if (isNum(Number(textFrmBtn)) | (textFrmBtn == ".")) {
         value.push(textFrmBtn);
         num = Number(value.join(""));
-        visual.textContent = num;
       } else {
         return;
       }
+      /*       firstNum = num; */
+      if (visual.textContent == "") firstNum = num;
+      else secondNum = num;
     });
     // stores first number before operation is pressed
-    if (firstNum == undefined) firstNum = num;
-    else secondNum = num;
+    visual.textContent = num;
   }
 };
 
@@ -80,6 +81,9 @@ function clickOperate() {
         operation = this.innerHTML;
         displayNum();
         visual.textContent = this.innerHTML + firstNum;
+        // console.log("First number: " + firstNum);
+        // console.log("Operation: " + operation);
+        // console.log("Second number: " + secondNum);
         // if (visual.textContent == firstNum)
         //   visual.textContent = operate(operation, firstNum, secondNum);
       }
