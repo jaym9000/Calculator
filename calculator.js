@@ -79,7 +79,9 @@ function clickOperate() {
       if (["+", "-", "x", "÷", "=", "AC"].indexOf(this.innerHTML) > -1) {
         operation = this.innerHTML;
         displayNum();
-        visual.textContent = "";
+        visual.textContent = firstNum;
+        if (visual.textContent == firstNum)
+          visual.textContent = operate(operation, firstNum, secondNum);
       }
     });
   }
