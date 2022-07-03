@@ -1,10 +1,17 @@
 // Initialize global values
-let value = [];
+let valueFirst = [];
+let valueSecond = [];
 let num;
+let firstNum;
+let secondNum;
+let allNum = [];
+let operation;
 
 // DOM declaration section
 const btn = document.getElementsByTagName("button");
 const visual = document.getElementById("screen");
+
+/* ***** Simple operations section ***** */
 
 // This function adds 2 numbers
 function add(firstNum, secondNum) {
@@ -45,7 +52,7 @@ function isNum(btnPressed) {
   return [0, 1, 2, 3, 4, 5, 6, 7, 8, 9].indexOf(btnPressed) > -1;
 }
 
-// This function populates the display when number buttons are pressed
+// This function populates the display when number buttons are pressed and stores the value
 const displayNum = function pupulateDisplay() {
   for (let i = 0; i < btn.length; i++) {
     // when btn is clicked
@@ -53,8 +60,8 @@ const displayNum = function pupulateDisplay() {
       let textFrmBtn = btn[i].innerHTML;
       //   if btn clicked is a number
       if (isNum(Number(textFrmBtn)) | (textFrmBtn == ".")) {
-        value.push(textFrmBtn);
-        num = Number(value.join(""));
+        valueFirst.push(textFrmBtn);
+        num = Number(valueFirst.join(""));
         visual.textContent = num;
       } else {
         return;
@@ -62,9 +69,27 @@ const displayNum = function pupulateDisplay() {
     });
   }
 };
-displayNum();
 
-// Store previous value in variable once operator is clicked and empty display
-// const storeAndClear = (event) => {
-//   if(event == "+")
-// };
+// Empty display once operator is clicked
+function clickOperate() {
+  for (let i = 0; i < btn.length; i++) {
+    btn[i].addEventListener("click", function (event) {
+      if (["+", "-", "x", "÷", "=", "AC"].indexOf(this.innerHTML) > -1) {
+        operation = this.innerHTML;
+        firstNum = displayNum();
+        visual.textContent = "";
+      }
+    });
+  }
+}
+
+displayNum();
+clickOperate();
+
+for (let i = 0; i < btn.length; i++) {
+  btn[i].addEventListener("click", function (event) {
+    if (this.innerHTML == "=") {
+      visual.textContent = operate(operation, firstNum, secondNum);
+    }
+  });
+}
