@@ -67,7 +67,8 @@ const displayNum = function pupulateDisplay() {
       }
     });
     // stores first number before operation is pressed
-    firstNum = num;
+    if (firstNum == undefined) firstNum = num;
+    else secondNum = num;
   }
 };
 
@@ -87,10 +88,10 @@ function clickOperate() {
 displayNum();
 clickOperate();
 
-// for (let i = 0; i < btn.length; i++) {
-//   btn[i].addEventListener("click", function (event) {
-//     if (this.innerHTML == "=") {
-//       visual.textContent = operate(operation, firstNum, secondNum);
-//     }
-//   });
-// }
+for (let i = 0; i < btn.length; i++) {
+  btn[i].addEventListener("click", function (event) {
+    if (this.innerHTML == "=") {
+      visual.textContent = operate(operation, firstNum, secondNum);
+    }
+  });
+}
