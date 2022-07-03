@@ -76,7 +76,7 @@ const displayNum = function pupulateDisplay() {
 function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
-      if (["+", "-", "x", "÷", "AC"].indexOf(this.innerHTML) > -1) {
+      if (["+", "-", "x", "÷"].indexOf(this.innerHTML) > -1) {
         operation = this.innerHTML;
         displayNum();
         visual.textContent = this.innerHTML + firstNum;
