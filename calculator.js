@@ -38,9 +38,9 @@ function operate(string, firstNum, secondNum) {
     return add(firstNum, secondNum);
   } else if (string === "-") {
     return subtract(firstNum, secondNum);
-  } else if (string === "*") {
+  } else if (string === "x") {
     return multiply(firstNum, secondNum);
-  } else if (string === "/") {
+  } else if (string === "÷") {
     return divide(firstNum, secondNum);
   }
 }
@@ -76,12 +76,12 @@ const displayNum = function pupulateDisplay() {
 function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
-      if (["+", "-", "x", "÷", "=", "AC"].indexOf(this.innerHTML) > -1) {
+      if (["+", "-", "x", "÷", "AC"].indexOf(this.innerHTML) > -1) {
         operation = this.innerHTML;
         displayNum();
-        visual.textContent = firstNum;
-        if (visual.textContent == firstNum)
-          visual.textContent = operate(operation, firstNum, secondNum);
+        visual.textContent = this.innerHTML + firstNum;
+        // if (visual.textContent == firstNum)
+        //   visual.textContent = operate(operation, firstNum, secondNum);
       }
     });
   }
