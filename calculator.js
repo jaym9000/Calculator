@@ -1,6 +1,4 @@
 // Initialize global values
-
-let valueSecond = [];
 let num;
 let firstNum;
 let secondNum;
@@ -68,6 +66,8 @@ const displayNum = function pupulateDisplay() {
         return;
       }
     });
+    // stores first number before operation is pressed
+    firstNum = num;
   }
 };
 
@@ -77,7 +77,7 @@ function clickOperate() {
     btn[i].addEventListener("click", function (event) {
       if (["+", "-", "x", "÷", "=", "AC"].indexOf(this.innerHTML) > -1) {
         operation = this.innerHTML;
-        firstNum = displayNum();
+        displayNum();
         visual.textContent = "";
       }
     });
