@@ -1,10 +1,5 @@
 // Initialize global values
-let num;
-let firstNum;
-let secondNum;
-let empty;
-let allNum = [];
-let operation;
+let num, firstNum, secondNum, empty, operation;
 
 // DOM declaration section
 const btn = document.getElementsByTagName("button");
@@ -72,7 +67,6 @@ const displayNum = function pupulateDisplay() {
     });
     // empty variable helps store store second number in it's own variable
     empty = num;
-    // displays num
   }
 };
 
@@ -81,14 +75,18 @@ function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
       if (["+", "-", "x", "÷"].indexOf(this.innerHTML) > -1) {
-        operation = this.innerHTML;
-        displayNum();
-        visual.textContent = this.innerHTML + firstNum;
-        // console.log("First number: " + firstNum)
-        // console.log("Operation: " + operation)
-        // console.log("Second number: " + secondNum);
-        // if (visual.textContent == firstNum)
-        //   visual.textContent = operate(operation, firstNum, secondNum);
+        if (secondNum == undefined) {
+          operation = this.innerHTML;
+          displayNum();
+          visual.textContent = firstNum;
+        } else {
+          displayNum();
+          visual.textContent = operate(operation, firstNum, secondNum);
+          firstNum = operate(operation, firstNum, secondNum);
+          operation = this.innerHTML;
+        }
+      } else if (this.innerHTML == "=") {
+        visual.textContent = operate(operation, firstNum, secondNum);
       }
     });
   }
@@ -96,11 +94,3 @@ function clickOperate() {
 
 displayNum();
 clickOperate();
-
-for (let i = 0; i < btn.length; i++) {
-  btn[i].addEventListener("click", function (event) {
-    if (this.innerHTML == "=") {
-      visual.textContent = operate(operation, firstNum, secondNum);
-    }
-  });
-}
