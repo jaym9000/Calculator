@@ -24,7 +24,9 @@ function multiply(firstNum, secondNum) {
 
 // Divide function first checks if denominator is 0 (we cannot divide by 0), if it is 0 return error else divide numbers
 function divide(firstNum, secondNum) {
-  return secondNum === 0 ? "Error, cannot divide by 0" : firstNum / secondNum;
+  return secondNum === 0
+    ? alert("Error, cannot divide by 0")
+    : firstNum / secondNum;
 }
 
 // Operate function takes an operator as string and returns the calculated result appropriate to the operator
@@ -85,6 +87,7 @@ function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
       if (["+", "-", "x", "÷"].indexOf(this.innerHTML) > -1) {
+        console.log(this.innerHTML);
         if (secondNum == undefined) {
           operation = this.innerHTML;
           displayNum();

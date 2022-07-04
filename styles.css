@@ -4,6 +4,12 @@ html {
   justify-content: center;
 }
 
+.outline {
+  margin-top: 150px;
+  padding: 15px;
+  background-color: black;
+}
+
 /* Makes screen that displays everything pretty */
 #screen {
   box-sizing: border-box;
@@ -15,6 +21,10 @@ html {
   display: flex;
   flex-direction: column-reverse;
   padding: 5px;
+  background-color: grey;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 900;
+  font-size: 30px;
 }
 
 /* Takes care of all the buttons visuals */
@@ -41,6 +51,7 @@ button {
   border-radius: 50%;
   height: 50px;
   width: 50px;
+  /* background-color: lightgray; */
 }
 
 /* Gives some space between calculator and copyright text */
