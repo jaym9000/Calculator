@@ -87,7 +87,6 @@ function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
       if (["+", "-", "x", "÷"].indexOf(this.innerHTML) > -1) {
-        console.log(this.innerHTML);
         if (secondNum == undefined) {
           operation = this.innerHTML;
           displayNum();
@@ -102,8 +101,8 @@ function clickOperate() {
         if (firstNum == undefined) {
           return;
         } else if (secondNum == undefined) {
-          console.log(operation);
           visual.textContent = operate(operation, firstNum, firstNum);
+          firstNum = visual.textContent;
         } else visual.textContent = operate(operation, firstNum, secondNum);
       }
     });
