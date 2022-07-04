@@ -71,6 +71,7 @@ const displayNum = function pupulateDisplay() {
       } else {
         return;
       }
+      // stores first num and second num if first num is occupied
       if (empty == undefined) firstNum = num;
       else secondNum = num;
     });
@@ -79,7 +80,7 @@ const displayNum = function pupulateDisplay() {
   }
 };
 
-// Empty display once operator is clicked
+// Operates on stored values once operator is pressed
 function clickOperate() {
   for (let i = 0; i < btn.length; i++) {
     btn[i].addEventListener("click", function (event) {
@@ -106,5 +107,6 @@ function clickOperate() {
   }
 }
 
+// run functions
 displayNum();
 clickOperate();
