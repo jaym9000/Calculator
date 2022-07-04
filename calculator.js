@@ -53,6 +53,16 @@ const displayNum = function pupulateDisplay() {
     // when btn is clicked
     btn[i].addEventListener("click", function () {
       let textFrmBtn = btn[i].innerHTML;
+
+      // clears calculator
+      if (textFrmBtn == "AC") {
+        firstNum = undefined;
+        secondNum = undefined;
+        empty = undefined;
+        num = undefined;
+        value = [];
+        visual.textContent = "0";
+      }
       //   if btn clicked is a number
       if (isNum(Number(textFrmBtn)) | (textFrmBtn == ".")) {
         value.push(textFrmBtn);
@@ -61,7 +71,6 @@ const displayNum = function pupulateDisplay() {
       } else {
         return;
       }
-
       if (empty == undefined) firstNum = num;
       else secondNum = num;
     });
@@ -86,7 +95,12 @@ function clickOperate() {
           operation = this.innerHTML;
         }
       } else if (this.innerHTML == "=") {
-        visual.textContent = operate(operation, firstNum, secondNum);
+        if (firstNum == undefined) {
+          return;
+        } else if (secondNum == undefined) {
+          console.log(operation);
+          visual.textContent = operate(operation, firstNum, firstNum);
+        } else visual.textContent = operate(operation, firstNum, secondNum);
       }
     });
   }
