@@ -1,3 +1,5 @@
+/* Creator: Jean-Marc Mahoro - https://github.com/jaym9000 */
+
 // Initialize global values
 let num, firstNum, secondNum, empty, operation;
 
